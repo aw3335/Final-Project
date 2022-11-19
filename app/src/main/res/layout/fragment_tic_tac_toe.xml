@@ -1,14 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TicTacToe">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/img_center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_mid_left"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintEnd_toStartOf="@+id/img_center"
+        app:layout_constraintTop_toTopOf="@+id/img_center" />
+
+    <ImageView
+        android:id="@+id/img_top_left"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintEnd_toStartOf="@+id/img_top_mid"
+        app:layout_constraintStart_toStartOf="@+id/img_mid_left"
+        app:layout_constraintTop_toTopOf="@+id/img_top_mid" />
+
+    <ImageView
+        android:id="@+id/img_top_mid"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintBottom_toTopOf="@+id/img_center"
+        app:layout_constraintEnd_toEndOf="@+id/img_center"
+        app:layout_constraintStart_toStartOf="@+id/img_center" />
+
+    <ImageView
+        android:id="@+id/img_top_right"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintEnd_toEndOf="@+id/img_mid_right"
+        app:layout_constraintStart_toEndOf="@+id/img_top_mid"
+        app:layout_constraintTop_toTopOf="@+id/img_top_mid" />
+
+    <ImageView
+        android:id="@+id/img_mid_right"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintStart_toEndOf="@+id/img_center"
+        app:layout_constraintTop_toTopOf="@+id/img_center" />
+
+    <ImageView
+        android:id="@+id/img_bot_mid"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintEnd_toEndOf="@+id/img_center"
+        app:layout_constraintStart_toStartOf="@+id/img_center"
+        app:layout_constraintTop_toBottomOf="@+id/img_center" />
+
+    <ImageView
+        android:id="@+id/img_bot_left"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintBottom_toBottomOf="@+id/img_bot_mid"
+        app:layout_constraintEnd_toStartOf="@+id/img_bot_mid"
+        app:layout_constraintStart_toStartOf="@+id/img_mid_left"
+        app:layout_constraintTop_toBottomOf="@+id/img_mid_left" />
+
+    <ImageView
+        android:id="@+id/img_bot_right"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintBottom_toBottomOf="@+id/img_bot_mid"
+        app:layout_constraintEnd_toEndOf="@+id/img_mid_right"
+        app:layout_constraintStart_toEndOf="@+id/img_bot_mid"
+        app:layout_constraintTop_toBottomOf="@+id/img_mid_right" />
+</androidx.constraintlayout.widget.ConstraintLayout>

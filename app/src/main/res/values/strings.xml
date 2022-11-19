@@ -2,4 +2,8 @@
     <string name="app_name">Final Project</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="reversed">Reversed</string>
+    <string name="start">Start!</string>
 </resources>
