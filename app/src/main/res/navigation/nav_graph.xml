@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenu">
+
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.hfad.finalproject.MainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_mainMenu_to_hangMan"
+            app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_mainMenu_to_highScore"
+            app:destination="@id/highScore" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticTacToe"
+        android:name="com.hfad.finalproject.TicTacToe"
+        android:label="fragment_tic_tac_toe"
+        tools:layout="@layout/fragment_tic_tac_toe" >
+        <action
+            android:id="@+id/action_ticTacToe_to_highScore"
+            app:destination="@id/highScore" />
+        <action
+            android:id="@+id/action_ticTacToe_to_results"
+            app:destination="@id/results" />
+        <action
+            android:id="@+id/action_ticTacToe_to_hangMan"
+            app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_ticTacToe_to_mainMenu"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/hangMan"
+        android:name="com.hfad.finalproject.HangMan"
+        android:label="fragment_hang_man"
+        tools:layout="@layout/fragment_hang_man" >
+        <action
+            android:id="@+id/action_hangMan_to_highScore"
+            app:destination="@id/highScore" />
+        <action
+            android:id="@+id/action_hangMan_to_results"
+            app:destination="@id/results" />
+        <action
+            android:id="@+id/action_hangMan_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_hangMan_to_mainMenu"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/results"
+        android:name="com.hfad.finalproject.Results"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" >
+        <argument
+            android:name="Name"
+            app:argType="string" />
+        <argument
+            android:name="Score"
+            app:argType="float" />
+        <action
+            android:id="@+id/action_results_to_mainMenu"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScore"
+        android:name="com.hfad.finalproject.HighScore"
+        android:label="fragment_high_score"
+        tools:layout="@layout/fragment_high_score" >
+        <action
+            android:id="@+id/action_highScore_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_highScore_to_hangMan"
+            app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_highScore_to_mainMenu2"
+            app:destination="@id/mainMenu" />
+    </fragment>
+</navigation>
