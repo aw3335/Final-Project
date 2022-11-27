@@ -80,7 +80,7 @@ public class TicTacToe extends Fragment {
                         }
                         else
                         {
-                            if (playerTurn[0] == 1) {winner = 2} else {winner = 1}
+                            if (playerTurn[0] == 1) {winner = 2;} else {winner = 1;}
                         }
 
                         //display winner, save results, etc
