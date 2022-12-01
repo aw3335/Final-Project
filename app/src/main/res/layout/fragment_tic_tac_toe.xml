@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TicTacToe">
+
+    <ImageView
+        android:id="@+id/GridTicTacToe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="195dp"
+        android:src="@drawable/ultimate_tic_tac_toe12_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgHangman" />
+
+    <ImageView
+        android:id="@+id/imgHangman"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/hangman"
+        app:layout_constraintEnd_toStartOf="@+id/imgScore"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/_11645_home_512x512"
+        app:layout_constraintEnd_toStartOf="@+id/imgHangman"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgScore"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/asset_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView

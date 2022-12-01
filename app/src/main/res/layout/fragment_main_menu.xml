@@ -21,31 +21,23 @@
         app:layout_constraintVertical_bias="0.354" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imgHangman"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/hangman"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/imgScore"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/_11645_home_512x512"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgTicTacToe"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/asset_1"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/imgHangman"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgScore"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/asset_2"

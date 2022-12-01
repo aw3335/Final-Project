@@ -3,6 +3,7 @@ package com.hfad.finalproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,35 @@ public class TicTacToe extends Fragment {
         ImageView imgBotLeft = view.findViewById(R.id.img_bot_left);
         ImageView imgBotMid = view.findViewById(R.id.img_bot_mid);
         ImageView imgBotRight = view.findViewById(R.id.img_bot_right);
+
+        //***********************************************
+        //Moving Between Fragment
+        ImageView imgHangMan = view.findViewById(R.id.imgHangman);
+        ImageView imgHome = view.findViewById(R.id.imgHome);
+        ImageView imgScore = view.findViewById(R.id.imgScore);
+
+
+        imgHangMan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_ticTacToe_to_hangMan);
+            }
+        });
+
+        imgScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_ticTacToe_to_results);
+            }
+        });
+
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_ticTacToe_to_mainMenu);
+            }
+        });
+        //***********************************************
 
         ArrayList<ImageView> boxes = new ArrayList<ImageView>();
         boxes.add(imgTopLeft);
