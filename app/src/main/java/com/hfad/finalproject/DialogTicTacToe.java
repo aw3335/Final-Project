@@ -14,7 +14,9 @@ import androidx.fragment.app.DialogFragment;
 public class DialogTicTacToe extends DialogFragment {
 
     public DialogTicTacToe()
-    {}
+    {
+        this.setCancelable(false);
+    }
 
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
@@ -36,7 +38,9 @@ public class DialogTicTacToe extends DialogFragment {
                 }
                 else
                 {
-                    Database.setReversed(chkReversed.isChecked());
+                    TicTacToe.Manager.setPlayer(1, edtPlayerOne.getText().toString());
+                    TicTacToe.Manager.setPlayer(2, edtPlayerTwo.getText().toString());
+                    TicTacToe.Manager.setReversed(chkReversed.isChecked());
                     //Keep track of names
                 }
             }

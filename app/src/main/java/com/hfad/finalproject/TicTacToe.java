@@ -19,11 +19,51 @@ import java.util.ArrayList;
  */
 public class TicTacToe extends Fragment {
 
+    static class Manager
+    {
+        private static String player1;
+        private static String player2;
+        private static boolean reversed;
+
+        static void setPlayer(int n, String p)
+        {
+            if (n == 1)
+                player1 = p;
+            else if (n == 2)
+                player2 = p;
+        }
+
+        static String getPlayer(int n)
+        {
+            String name = "";
+            if (n == 1)
+                name = player1;
+            else if (n == 2)
+                name = player2;
+            return name;
+        }
+
+        static void setReversed(boolean r)
+        {
+            reversed = r;
+        }
+
+        static boolean isReversed()
+        {
+            return reversed;
+        }
+
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tic_tac_toe, container, false);
+
+        DialogTicTacToe dialog = new DialogTicTacToe();
+        dialog.show(getActivity().getSupportFragmentManager(), "");
 
         ImageView imgTopLeft = view.findViewById(R.id.img_top_left);
         ImageView imgTopMid = view.findViewById(R.id.img_top_mid);
