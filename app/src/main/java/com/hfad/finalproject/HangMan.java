@@ -312,8 +312,9 @@ public class HangMan extends Fragment {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
 
-            Navigation.findNavController(view).navigate(R.id.action_hangMan_to_highScore);
-
+            HangManDirections.ActionHangManToResults action =
+                    HangManDirections.actionHangManToResults("Test", lives, "Hangman");
+            Navigation.findNavController(view).navigate(action);
         }
         if(lives == 0)
         {
@@ -323,7 +324,10 @@ public class HangMan extends Fragment {
 
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
-            Navigation.findNavController(view).navigate(R.id.action_hangMan_to_highScore);
+
+            HangManDirections.ActionHangManToResults action =
+                    HangManDirections.actionHangManToResults("Test", lives, "Hangman");
+            Navigation.findNavController(view).navigate(action);
 
         }
     }
@@ -386,88 +390,3 @@ public class HangMan extends Fragment {
     }
 
 }
-
-
-
-
-
-//
-//    public static final Random RANDOM = new Random();
-//
-//    // Max errors before user lose
-//    public static final int MAX_ERRORS = 6;
-//    // Word to find
-//    private String wordToFind;
-//    // Word found stored in a char array to show progression of user
-//    private char[] wordFound;
-//    private int nbErrors;
-//    // letters already entered by user
-//    private ArrayList<String> letters = new ArrayList<>();
-//    private ImageView img;
-//    private TextView wordTv;
-//    private TextView wordToFindTv;
-//
-//    private String nextWordToFind() {
-//        return WORDS[RANDOM.nextInt(WORDS.length)];
-//    }
-//
-//    private void updateImg(int play) {
-//        int resImg = getResources().getIdentifier("hangman_" + play, "drawable", getActivity().getPackageName());
-//        img.setImageResource(resImg);
-//    }
-//
-//    private String wordFoundContent() {
-//        StringBuilder builder = new StringBuilder();
-//
-//        for (int i = 0; i < wordFound.length; i++) {
-//            builder.append(wordFound[i]);
-//
-//            if (i < wordFound.length - 1) {
-//                builder.append(" ");
-//            }
-//        }
-//
-//        return builder.toString();
-//    }
-//
-//    public void newGame() {
-//        nbErrors = -1;
-//        letters.clear();
-//        wordToFind = nextWordToFind();
-//
-//        // word found initialization
-//        wordFound = new char[wordToFind.length()];
-//
-//        for (int i = 0; i < wordFound.length; i++) {
-//            wordFound[i] = '_';
-//        }
-//
-//        updateImg(nbErrors);
-//        wordTv.setText(wordFoundContent());
-//        wordToFindTv.setText("");
-//    }
-//
-//    private void enter(String c) {
-//        // we update only if c has not already been entered
-//        if (!letters.contains(c)) {
-//            // we check if word to find contains c
-//            if (wordToFind.contains(c)) {
-//                // if so, we replace _ by the character c
-//                int index = wordToFind.indexOf(c);
-//
-//                while (index >= 0) {
-//                    wordFound[index] = c.charAt(0);
-//                    index = wordToFind.indexOf(c, index + 1);
-//                }
-//            } else {
-//                // c not in the word => error
-//                nbErrors++;
-//                Toast.makeText(this.getContext(), R.string.try_an_other, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            // c is now a letter entered
-//            letters.add(c);
-//        } else {
-//            Toast.makeText(this.getContext(), R.string.letter_already_entered, Toast.LENGTH_SHORT).show();
-//        }
-//    }

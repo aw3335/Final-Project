@@ -76,6 +76,9 @@
         <action
             android:id="@+id/action_results_to_ticTacToe"
             app:destination="@id/ticTacToe" />
+        <action
+            android:id="@+id/action_results_to_hangMan"
+            app:destination="@id/hangMan" />
     </fragment>
     <fragment
         android:id="@+id/highScore"

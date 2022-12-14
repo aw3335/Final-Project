@@ -38,11 +38,28 @@ public class Results extends Fragment {
         txtWinner.setText("Winner: " + winner);
         txtScore.setText("Score: " + score);
 
+        if(game.equals("Hangman"))
+        {
+            if(score == 0)
+            {
+                txtWinner.setText("Loser");
+            }
+            else {
+                txtWinner.setText("Winner");
+            }
+            txtScore.setText("Lives: " + score);
+        }
+        DBHelper dbHelper = new DBHelper(getContext());
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 btnSave.setText("Saved!");
                 btnSave.setEnabled(false);
                 //save score to database
+                DBContract dbContract = new DBContract();
+                dbHelper.saveEntry(winner, game, score);
+
+                System.out.println(dbHelper.fetchAllEntries());
             }
         });
 
@@ -61,7 +78,7 @@ public class Results extends Fragment {
                 }
                 else if (game.equals("Hangman"))
                 {
-                    //go to hangman
+                    Navigation.findNavController(view).navigate(R.id.action_results_to_hangMan);
                 }
             }
         });

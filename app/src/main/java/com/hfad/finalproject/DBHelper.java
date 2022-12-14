@@ -35,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
     {
         //insert into employee(name, dob, designation) values ('Angel', 10000000 , 'SQL Programmer');
         @SuppressLint("DefaultLocale") String insertString = String.format("insert into %s(%s, %s, %s) " +
-                        "values ('%s', %d , '%s');", DBContract.UserEntry.TABLE_NAME,
+                        "values ('%s', '%s' , %d);", DBContract.UserEntry.TABLE_NAME,
                 DBContract.UserEntry.COLUMN_NAME,DBContract.UserEntry.COLUMN_GAME, DBContract.UserEntry.COLUMN_SCORE,
                 name, game, score);
 
