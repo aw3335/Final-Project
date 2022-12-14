@@ -307,10 +307,20 @@
         app:layout_constraintStart_toEndOf="@+id/btnH"
         app:layout_constraintTop_toTopOf="@+id/btnJ" />
 
+    <TextView
+        android:id="@+id/tvLives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lives: 6"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="182dp"
-        android:layout_height="200dp"
+        android:id="@+id/imgDraw"
+        android:layout_width="167dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/_f958d709c061a11ced8700b8fee3f714367b7276f1834d7b65c9ebf7fb41ff7"
         app:layout_constraintBottom_toTopOf="@+id/wordToFindTv"
         app:layout_constraintEnd_toEndOf="parent"
