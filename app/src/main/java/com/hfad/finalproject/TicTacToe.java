@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,41 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class TicTacToe extends Fragment {
+
+    static class Manager
+    {
+        private static String player1;
+        private static String player2;
+        private static boolean reversed;
+
+        static void setPlayer(int n, String p)
+        {
+            if (n == 1)
+                player1 = p;
+            else if (n == 2)
+                player2 = p;
+        }
+
+        static String getPlayer(int n)
+        {
+            String name = "";
+            if (n == 1)
+                name = player1;
+            else if (n == 2)
+                name = player2;
+            return name;
+        }
+
+        static void setReversed(boolean r)
+        {
+            reversed = r;
+        }
+
+        static boolean isReversed()
+        {
+            return reversed;
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +70,8 @@ public class TicTacToe extends Fragment {
         ImageView imgBotLeft = view.findViewById(R.id.img_bot_left);
         ImageView imgBotMid = view.findViewById(R.id.img_bot_mid);
         ImageView imgBotRight = view.findViewById(R.id.img_bot_right);
+
+        TextView txtTurn = view.findViewById(R.id.txt_turn);
 
         //***********************************************
         //Moving Between Fragment
@@ -78,43 +116,59 @@ public class TicTacToe extends Fragment {
         ArrayList<String> map = new ArrayList<String>();
         for (ImageView i : boxes)
         {
-            map.add(null);
+            map.add("");
         }
 
         int[] playerTurn = {1};
+
+        txtTurn.setText("It is " + Manager.getPlayer(1) + "'s turn!");
 
         for (ImageView box : boxes)
         {
             box.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     ImageView current = (ImageView) view;
-                    if (playerTurn[0] == 1 && map.get(boxes.indexOf(current)) == null)
+                    if (playerTurn[0] == 1 && map.get(boxes.indexOf(current)).equals(""))
                     {
                         current.setImageResource(R.drawable.ic_x);
                         playerTurn[0] = 2;
                         map.set(boxes.indexOf(current), "X");
+                        txtTurn.setText("It is " + Manager.getPlayer(2) + "'s turn!");
                     }
-                    else if (playerTurn[0] == 2 && map.get(boxes.indexOf(current)) == null)
+                    else if (playerTurn[0] == 2 && map.get(boxes.indexOf(current)).equals(""))
                     {
                         current.setImageResource(R.drawable.ic_o);
                         playerTurn[0] = 1;
                         map.set(boxes.indexOf(current), "O");
+                        txtTurn.setText("It is " + Manager.getPlayer(1) + "'s turn!");
                     }
 
                     if (winnerExists(map))
                     {
-                        int winner;
-                        if (Database.getReversed())
+                        String winner;
+                        int turn = playerTurn[0];
+                        if (Manager.isReversed())
                         {
-                            winner = playerTurn[0];
+                            winner = Manager.getPlayer(turn);
                         }
                         else
                         {
-                            if (playerTurn[0] == 1) {winner = 2;} else {winner = 1;}
+                            if (turn == 1)
+                            {
+                                winner = Manager.getPlayer(2);
+                            }
+                            else
+                            {
+                                winner = Manager.getPlayer(1);
+                            }
                         }
 
-                        //display winner, save results, etc
-
+                        System.out.println("!!!!!! \n WINNER \n !!!!!!");
+                        String game = "Tic Tac Toe";
+                        if (Manager.isReversed()) {game = "Reversed " + game;}
+                        TicTacToeDirections.ActionTicTacToeToResults action =
+                                TicTacToeDirections.actionTicTacToeToResults(winner, getScore(map), game);
+                        Navigation.findNavController(view).navigate(action);
                     }
 
                 }
@@ -140,7 +194,9 @@ public class TicTacToe extends Fragment {
 
         for (int[] o : options)
         {
-            if (map.get(o[0]).equals( map.get(o[1]) ) && map.get(o[1]).equals( map.get(o[2]) ))
+            boolean allSame = map.get(o[0]).equals( map.get(o[1]) ) && map.get(o[1]).equals( map.get(o[2]) );
+            boolean noneEmpty = (!map.get(o[0]).equals(""));
+            if (allSame && noneEmpty)
             {
                 found = true;
             }
@@ -148,6 +204,19 @@ public class TicTacToe extends Fragment {
 
         return found;
 
+    }
+
+    private int getScore(ArrayList<String> map)
+    {
+        int score = 0;
+        for (String s : map)
+        {
+            if (s.equals(""))
+            {
+                score += 10;
+            }
+        }
+        return score;
     }
 
 

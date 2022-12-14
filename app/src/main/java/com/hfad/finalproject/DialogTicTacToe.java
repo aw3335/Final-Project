@@ -8,13 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.navigation.Navigation;
 
 public class DialogTicTacToe extends DialogFragment {
 
     public DialogTicTacToe()
-    {}
+    {
+        this.setCancelable(false);
+    }
 
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
@@ -30,19 +34,25 @@ public class DialogTicTacToe extends DialogFragment {
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (edtPlayerOne.getText().toString().equals("") || edtPlayerTwo.getText().toString().equals(""))
+
+                String player1 = edtPlayerOne.getText().toString();
+                String player2 = edtPlayerTwo.getText().toString();
+
+                if (player1.equals("") || player2.equals(""))
                 {
                     //toast to ask for player names
                 }
                 else
                 {
-                    Database.setReversed(chkReversed.isChecked());
-                    //Keep track of names
+                    TicTacToe.Manager.setReversed(chkReversed.isChecked());
+                    TicTacToe.Manager.setPlayer(1, player1);
+                    TicTacToe.Manager.setPlayer(2, player2);
+                    //goofy ahh navigation code
+                    Navigation.findNavController(getActivity().findViewById(R.id.imgTicTacToe)).navigate(R.id.action_mainMenu_to_ticTacToe);
+                    dismiss();
                 }
             }
         });
-
-
 
         builder.setView(dialogView);
 

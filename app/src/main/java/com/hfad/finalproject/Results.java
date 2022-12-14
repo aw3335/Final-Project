@@ -8,11 +8,13 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Results#newInstance} factory method to
+ * Use the {@link Results} factory method to
  * create an instance of this fragment.
  */
 public class Results extends Fragment {
@@ -22,6 +24,48 @@ public class Results extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_results, container, false);
+
+        TextView txtWinner = view.findViewById(R.id.txt_winner);
+        TextView txtScore = view.findViewById(R.id.txt_score);
+        Button btnSave = view.findViewById(R.id.btn_save);
+        Button btnHome = view.findViewById(R.id.btn_home);
+        Button btnReplay = view.findViewById(R.id.btn_replay);
+
+        String winner = ResultsArgs.fromBundle(requireArguments()).getName();
+        String game = ResultsArgs.fromBundle(requireArguments()).getGame();
+        int score = ResultsArgs.fromBundle(requireArguments()).getScore();
+
+        txtWinner.setText("Winner: " + winner);
+        txtScore.setText("Score: " + score);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                btnSave.setText("Saved!");
+                btnSave.setEnabled(false);
+                //save score to database
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_results_to_mainMenu);
+            }
+        });
+
+
+        btnReplay.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (game.equals("Tic Tac Toe") || game.equals("Reversed Tic Tac Toe"))
+                {
+                    Navigation.findNavController(view).navigate(R.id.action_results_to_ticTacToe);
+                }
+                else if (game.equals("Hangman"))
+                {
+                    //go to hangman
+                }
+            }
+        });
+
 
         return view;
     }
