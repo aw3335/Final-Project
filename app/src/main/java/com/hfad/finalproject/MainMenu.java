@@ -31,10 +31,10 @@ public class MainMenu extends Fragment {
         imgTicTacToe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("\n\n We are at TicTacToe!!!");
-//                DialogTicTacToe dialog = new DialogTicTacToe();
-//                dialog.onCreateDialog(savedInstanceState);
-                Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_ticTacToe);
+
+                DialogTicTacToe dialog = new DialogTicTacToe();
+                dialog.show(getActivity().getSupportFragmentManager(), "");
+
             }
         });
 

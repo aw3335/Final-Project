@@ -17,4 +17,6 @@
     <string name="word_to_find">Word to find was: #word#</string>
     <string name="try_an_other">Try an other letter</string>
     <string name="letter_already_entered">Letter already entered</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
 </resources>

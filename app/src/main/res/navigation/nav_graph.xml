@@ -64,12 +64,18 @@
         <argument
             android:name="Name"
             app:argType="string" />
-        <argument
-            android:name="Score"
-            app:argType="float" />
         <action
             android:id="@+id/action_results_to_mainMenu"
             app:destination="@id/mainMenu" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="game"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_results_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
     </fragment>
     <fragment
         android:id="@+id/highScore"

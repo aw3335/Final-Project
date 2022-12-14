@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Score#newInstance} factory method to
+ * Use the {@link Score} factory method to
  * create an instance of this fragment.
  */
 public class Score extends Fragment {
