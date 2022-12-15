@@ -6,6 +6,7 @@
     <string name="player_2">Player 2</string>
     <string name="reversed">Reversed</string>
     <string name="start">Start!</string>
+    <string name = "hangman">HangMan</string>
 
 
     <string name="init_word">_ _ _ _ _ _ _</string>

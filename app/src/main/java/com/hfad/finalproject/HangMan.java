@@ -303,6 +303,7 @@ public class HangMan extends Fragment {
         tvWord.setText(newWord);
         btn.setClickable(false);
         btn.setBackgroundColor(Color.BLACK);
+        String name = HangManArgs.fromBundle(getArguments()).getPlayer();
         if(!tvWord.getText().toString().contains("_"))
         {
             Context context = view.getContext();
@@ -313,7 +314,7 @@ public class HangMan extends Fragment {
             toast.show();
 
             HangManDirections.ActionHangManToResults action =
-                    HangManDirections.actionHangManToResults("Test", lives, "Hangman");
+                    HangManDirections.actionHangManToResults(name, lives, "Hangman");
             Navigation.findNavController(view).navigate(action);
         }
         if(lives == 0)
@@ -326,7 +327,7 @@ public class HangMan extends Fragment {
             toast.show();
 
             HangManDirections.ActionHangManToResults action =
-                    HangManDirections.actionHangManToResults("Test", lives, "Hangman");
+                    HangManDirections.actionHangManToResults(name, lives, "Hangman");
             Navigation.findNavController(view).navigate(action);
 
         }

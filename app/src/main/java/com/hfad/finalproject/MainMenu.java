@@ -25,7 +25,6 @@ public class MainMenu extends Fragment {
 
         ImageView imgTicTacToe = view.findViewById(R.id.imgTicTacToe);
         ImageView imgHangMan = view.findViewById(R.id.imgHangman);
-        ImageView imgHome = view.findViewById(R.id.imgHome);
         ImageView imgScore = view.findViewById(R.id.imgScore);
 
         imgTicTacToe.setOnClickListener(new View.OnClickListener() {
@@ -41,9 +40,8 @@ public class MainMenu extends Fragment {
         imgHangMan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_hangMan);
-            }
-        });
+            Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_dialogHangman);
+        }});
 
         imgScore.setOnClickListener(new View.OnClickListener() {
             @Override
