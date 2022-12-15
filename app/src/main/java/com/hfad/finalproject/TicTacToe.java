@@ -143,7 +143,16 @@ public class TicTacToe extends Fragment {
                         txtTurn.setText("It is " + Manager.getPlayer(1) + "'s turn!");
                     }
 
-                    if (winnerExists(map))
+                    if (tieExists(map))
+                    {
+                        String game = "Tic Tac Toe";
+                        if (Manager.isReversed()) {game = "Reversed " + game;}
+                        TicTacToeDirections.ActionTicTacToeToResults action =
+                                TicTacToeDirections.actionTicTacToeToResults("Tie", 0, game);
+                        Navigation.findNavController(view).navigate(action);
+                    }
+
+                    else if (winnerExists(map))
                     {
                         String winner;
                         int turn = playerTurn[0];
@@ -178,6 +187,22 @@ public class TicTacToe extends Fragment {
         return view;
     }
 
+    private boolean tieExists(ArrayList<String> map)
+    {
+        boolean found = true;
+
+        for (String s : map)
+        {
+            if (s.equals(""))
+            {
+                found = false;
+            }
+        }
+        System.out.println(found);
+        return found;
+    }
+
+
     private boolean winnerExists(ArrayList<String> map)
     {
         boolean found = false;
@@ -208,7 +233,7 @@ public class TicTacToe extends Fragment {
 
     private int getScore(ArrayList<String> map)
     {
-        int score = 0;
+        int score = 10;
         for (String s : map)
         {
             if (s.equals(""))

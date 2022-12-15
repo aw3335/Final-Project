@@ -53,13 +53,14 @@ public class Results extends Fragment {
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                btnSave.setText("Saved!");
-                btnSave.setEnabled(false);
                 //save score to database
                 DBContract dbContract = new DBContract();
                 dbHelper.saveEntry(winner, game, score);
 
                 System.out.println(dbHelper.fetchAllEntries());
+
+                btnSave.setText("Saved!");
+                btnSave.setEnabled(false);
             }
         });
 
