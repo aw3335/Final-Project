@@ -41,8 +41,8 @@ public class HighScore extends Fragment {
         imgTicTacToe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("\n\n We are at TicTacToe!!!");
-                Navigation.findNavController(v).navigate(R.id.action_highScore_to_ticTacToe);
+                DialogTicTacToe dialog = new DialogTicTacToe(R.id.action_highScore_to_ticTacToe);
+                dialog.show(getActivity().getSupportFragmentManager(), "");
             }
         });
 
@@ -68,7 +68,7 @@ public class HighScore extends Fragment {
     {
         RecyclerView rv = thisView.findViewById(R.id.recyclerView);
 
-        EntryListAdapter entListAdapter = new EntryListAdapter(getContext());
+        EntryListAdapter entListAdapter = new EntryListAdapter(getContext(), getActivity().getSupportFragmentManager());
         ArrayList<Entry> entries = dbHelper.fetchAllEntries();
         entListAdapter.setEntries(entries);
 

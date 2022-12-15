@@ -19,4 +19,6 @@
     <string name="letter_already_entered">Letter already entered</string>
     <string name="congratulations">Congratulations!</string>
     <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
 </resources>

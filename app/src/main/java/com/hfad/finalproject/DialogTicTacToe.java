@@ -15,9 +15,12 @@ import androidx.navigation.Navigation;
 
 public class DialogTicTacToe extends DialogFragment {
 
-    public DialogTicTacToe()
+    int action;
+
+    public DialogTicTacToe(int a)
     {
-        this.setCancelable(false);
+        action = a;
+        //this.setCancelable(false);
     }
 
     public Dialog onCreateDialog(Bundle savedInstanceState)
@@ -48,7 +51,7 @@ public class DialogTicTacToe extends DialogFragment {
                     TicTacToe.Manager.setPlayer(1, player1);
                     TicTacToe.Manager.setPlayer(2, player2);
                     //goofy ahh navigation code
-                    Navigation.findNavController(getActivity().findViewById(R.id.imgTicTacToe)).navigate(R.id.action_mainMenu_to_ticTacToe);
+                    Navigation.findNavController(getActivity().findViewById(R.id.imgTicTacToe)).navigate(action);
                     dismiss();
                 }
             }

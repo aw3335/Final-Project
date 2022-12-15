@@ -1,11 +1,13 @@
 package com.hfad.finalproject;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,10 +16,12 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.Scor
 
     private ArrayList<Entry> scoresList;
     private Context context;
+    private FragmentManager manager;
 
-    public EntryListAdapter(Context c)
+    public EntryListAdapter(Context c, FragmentManager fm)
     {
         context = c;
+        manager = fm;
     }
 
     @Override
@@ -74,7 +78,8 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.Scor
 
         public void onClick(View view)
         {
-            //show dialog
+            DialogEntry dialog = new DialogEntry(currentEnt, EntryListAdapter.this, scoresList);
+            dialog.show(manager, "");
         }
 
 

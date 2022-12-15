@@ -50,7 +50,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void deleteEntry(long id)
     {
         //insert into employee(name, dob, designation) values ('Angel', 10000000 , 'SQL Programmer');
-        @SuppressLint("DefaultLocale") String insertString = String.format("delete from %s where %s = %d);",
+        @SuppressLint("DefaultLocale") String insertString = String.format("delete from %s where %s = %d)",
                 DBContract.UserEntry.TABLE_NAME, DBContract.UserEntry.COLUMN_ID, id);
 
         System.out.println("Saving: " + insertString);

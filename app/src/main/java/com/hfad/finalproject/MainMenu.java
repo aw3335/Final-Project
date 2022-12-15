@@ -31,7 +31,7 @@ public class MainMenu extends Fragment {
             @Override
             public void onClick(View v) {
 
-                DialogTicTacToe dialog = new DialogTicTacToe();
+                DialogTicTacToe dialog = new DialogTicTacToe(R.id.action_mainMenu_to_ticTacToe);
                 dialog.show(getActivity().getSupportFragmentManager(), "");
 
             }
