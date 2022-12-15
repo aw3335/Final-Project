@@ -306,12 +306,6 @@ public class HangMan extends Fragment {
         String name = HangManArgs.fromBundle(getArguments()).getPlayer();
         if(!tvWord.getText().toString().contains("_"))
         {
-            Context context = view.getContext();
-            CharSequence text = "You Win!!!!";
-            int duration = Toast.LENGTH_LONG;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
 
             HangManDirections.ActionHangManToResults action =
                     HangManDirections.actionHangManToResults(name, lives, "Hangman");
@@ -319,12 +313,6 @@ public class HangMan extends Fragment {
         }
         if(lives == 0)
         {
-            Context context = view.getContext();
-            CharSequence text = "You Loose!!!!!";
-            int duration = Toast.LENGTH_LONG;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
 
             HangManDirections.ActionHangManToResults action =
                     HangManDirections.actionHangManToResults(name, lives, "Hangman");
