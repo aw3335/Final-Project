@@ -50,4 +50,5 @@
         app:layout_constraintBottom_toTopOf="@+id/edt_player_one"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

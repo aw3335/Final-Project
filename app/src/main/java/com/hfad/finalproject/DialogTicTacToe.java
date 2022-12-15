@@ -20,7 +20,7 @@ public class DialogTicTacToe extends DialogFragment {
     public DialogTicTacToe(int a)
     {
         action = a;
-        //this.setCancelable(false);
+
     }
 
     public Dialog onCreateDialog(Bundle savedInstanceState)

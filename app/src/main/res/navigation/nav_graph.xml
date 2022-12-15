@@ -17,8 +17,8 @@
             android:id="@+id/action_mainMenu_to_highScore"
             app:destination="@id/highScore" />
         <action
-            android:id="@+id/action_mainMenu_to_dialogHangman"
-            app:destination="@id/dialogHangman" />
+            android:id="@+id/action_mainMenu_to_hangMan"
+            app:destination="@id/hangMan" />
     </fragment>
     <fragment
         android:id="@+id/ticTacToe"
@@ -97,14 +97,5 @@
         <action
             android:id="@+id/action_highScore_to_mainMenu2"
             app:destination="@id/mainMenu" />
-    </fragment>
-    <fragment
-        android:id="@+id/dialogHangman"
-        android:name="com.hfad.finalproject.DialogHangman"
-        android:label="fragment_dialog_hangman"
-        tools:layout="@layout/fragment_dialog_hangman" >
-        <action
-            android:id="@+id/action_dialogHangman_to_hangMan"
-            app:destination="@id/hangMan" />
     </fragment>
 </navigation>

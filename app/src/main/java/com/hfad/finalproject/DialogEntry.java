@@ -48,7 +48,7 @@ public class DialogEntry extends DialogFragment {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 dbHelper.deleteEntry(currentEntry.getId());
-                //entryList.remove(currentEntry);
+                entryList.remove(currentEntry);
                 adapter.notifyDataSetChanged();
                 adapter.notifyItemRangeChanged(0, entryList.size());
                 dismiss();

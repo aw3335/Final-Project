@@ -25,6 +25,7 @@ import java.util.Random;
  */
 public class HangMan extends Fragment {
 
+    public static String player;
     public static final String[] WORDS = {
             "ABSTRACT", "ASSERT", "BOOLEAN", "BREAK", "BYTE",
             "CASE", "CATCH", "CHAR", "CLASS", "CONST",
@@ -55,6 +56,9 @@ public class HangMan extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_hang_man, container, false);
+
+        DialogHangman dialog = new DialogHangman();
+        dialog.show(getActivity().getSupportFragmentManager(), "");
 
         ImageView imgTicTacToe = view.findViewById(R.id.imgTicTacToe);
         ImageView imgHome = view.findViewById(R.id.imgHome);
@@ -301,7 +305,7 @@ public class HangMan extends Fragment {
         tvWord.setText(newWord);
         btn.setClickable(false);
         btn.setBackgroundColor(Color.BLACK);
-        String name = HangManArgs.fromBundle(getArguments()).getPlayer();
+        String name = player;
         if(!tvWord.getText().toString().contains("_"))
         {
 

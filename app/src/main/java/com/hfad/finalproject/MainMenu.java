@@ -40,7 +40,7 @@ public class MainMenu extends Fragment {
         imgHangMan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_dialogHangman);
+            Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_hangMan);
         }});
 
         imgScore.setOnClickListener(new View.OnClickListener() {
