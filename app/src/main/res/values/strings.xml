@@ -21,4 +21,11 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="delete">Delete</string>
     <string name="close">Close</string>
+
+    <string-array name="sorters">
+        <item>ID</item>
+        <item>Name</item>
+        <item>Game</item>
+        <item>Points</item>
+    </string-array>
 </resources>
