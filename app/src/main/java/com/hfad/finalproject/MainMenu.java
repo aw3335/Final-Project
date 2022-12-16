@@ -27,6 +27,7 @@ public class MainMenu extends Fragment {
         ImageView imgTicTacToe = view.findViewById(R.id.imgTicTacToe);
         ImageView imgHangMan = view.findViewById(R.id.imgHangman);
         ImageView imgScore = view.findViewById(R.id.imgScore);
+        ImageView imgRockPaperScissor = view.findViewById(R.id.RockPaperScissor);
 
         //If the image for the TicTacToe is clicked on then create a new dialog and show it to the user
         imgTicTacToe.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,14 @@ public class MainMenu extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_mainMenu_to_highScore);
+            }
+        });
+
+        imgRockPaperScissor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogRPS dialog = new DialogRPS(R.id.action_hangMan_to_RPS);
+                dialog.show(getActivity().getSupportFragmentManager(), "");
             }
         });
 

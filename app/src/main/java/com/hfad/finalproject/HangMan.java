@@ -69,6 +69,7 @@ public class HangMan extends Fragment {
         ImageView imgHome = view.findViewById(R.id.imgHome);
         ImageView imgScore = view.findViewById(R.id.imgScore);
         TextView tvLives = view.findViewById(R.id.tvLives);
+        ImageView imgRockPaperScissor = view.findViewById(R.id.RockPaperScissor);
 
         //Adds all the hangman images to the hangdraw arraylist
         hangDraws.add(R.drawable.hang1);
@@ -96,6 +97,13 @@ public class HangMan extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_hangMan_to_highScore);
+            }
+        });
+        imgRockPaperScissor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogRPS dialog = new DialogRPS(R.id.action_hangMan_to_RPS);
+                dialog.show(getActivity().getSupportFragmentManager(), "");
             }
         });
 

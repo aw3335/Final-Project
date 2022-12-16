@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_mainMenu_to_hangMan"
             app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_mainMenu_to_RPS"
+            app:destination="@id/RPS" />
     </fragment>
     <fragment
         android:id="@+id/ticTacToe"
@@ -37,6 +40,9 @@
         <action
             android:id="@+id/action_ticTacToe_to_mainMenu"
             app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_ticTacToe_to_RPS"
+            app:destination="@id/RPS" />
     </fragment>
     <fragment
         android:id="@+id/hangMan"
@@ -58,6 +64,9 @@
         <argument
             android:name="Player"
             app:argType="string" />
+        <action
+            android:id="@+id/action_hangMan_to_RPS"
+            app:destination="@id/RPS" />
     </fragment>
     <fragment
         android:id="@+id/results"
@@ -82,6 +91,9 @@
         <action
             android:id="@+id/action_results_to_hangMan"
             app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_results_to_RPS"
+            app:destination="@id/RPS" />
     </fragment>
     <fragment
         android:id="@+id/highScore"
@@ -97,5 +109,29 @@
         <action
             android:id="@+id/action_highScore_to_mainMenu2"
             app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_highScore_to_RPS"
+            app:destination="@id/RPS" />
+    </fragment>
+    <fragment
+        android:id="@+id/RPS"
+        android:name="com.hfad.finalproject.RPS"
+        android:label="fragment_r_p_s"
+        tools:layout="@layout/fragment_r_p_s" >
+        <action
+            android:id="@+id/action_RPS_to_hangMan"
+            app:destination="@id/hangMan" />
+        <action
+            android:id="@+id/action_RPS_to_results"
+            app:destination="@id/results" />
+        <action
+            android:id="@+id/action_RPS_to_mainMenu"
+            app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_RPS_to_highScore"
+            app:destination="@id/highScore" />
+        <action
+            android:id="@+id/action_RPS_to_ticTacToe"
+            app:destination="@id/ticTacToe" />
     </fragment>
 </navigation>

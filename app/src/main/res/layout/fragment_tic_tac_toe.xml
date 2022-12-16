@@ -28,11 +28,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/RockPaperScissor"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:src="@drawable/rock"
+        android:tooltipText="Rock Paper Scissor"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imgHome"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:tooltipText="MainMenu"
         android:src="@drawable/_11645_home_512x512"
+        android:tooltipText="MainMenu"
         app:layout_constraintEnd_toStartOf="@+id/imgHangman"
         app:layout_constraintTop_toTopOf="parent" />
 
