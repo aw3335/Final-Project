@@ -7,6 +7,9 @@ import android.os.PersistableBundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * MainActivity sets the view to the mainmenu and allows the application to run
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
