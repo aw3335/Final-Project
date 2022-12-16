@@ -104,7 +104,6 @@ public class TicTacToe extends Fragment {
         ImageView imgHangMan = view.findViewById(R.id.imgHangman);
         ImageView imgHome = view.findViewById(R.id.imgHome);
         ImageView imgScore = view.findViewById(R.id.imgScore);
-        ImageView imgRockPaperScissor = view.findViewById(R.id.RockPaperScissor);
 
         //Go back to hangman
         imgHangMan.setOnClickListener(new View.OnClickListener() {
@@ -130,13 +129,7 @@ public class TicTacToe extends Fragment {
             }
         });
 
-        imgRockPaperScissor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogRPS dialog = new DialogRPS(R.id.action_hangMan_to_RPS);
-                dialog.show(getActivity().getSupportFragmentManager(), "");
-            }
-        });
+
         //***********************************************
 
         //Create arraylist of imageviews

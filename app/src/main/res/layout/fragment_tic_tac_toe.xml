@@ -27,14 +27,6 @@
         app:layout_constraintEnd_toStartOf="@+id/imgScore"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/RockPaperScissor"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        android:src="@drawable/rock"
-        android:tooltipText="Rock Paper Scissor"
-        app:layout_constraintEnd_toStartOf="@+id/imgHome"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgHome"

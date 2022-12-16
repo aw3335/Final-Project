@@ -37,7 +37,6 @@
         android:src="@drawable/asset_1"
         android:tooltipText="Tic Tac Toe - (Reversed)"
         app:layout_constraintEnd_toStartOf="@+id/imgHangman"
-        app:layout_constraintStart_toEndOf="@+id/RockPaperScissor"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -49,13 +48,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/RockPaperScissor"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        android:src="@drawable/rock"
-        android:tooltipText="Rock Paper Scissor"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="213dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
