@@ -25,16 +25,19 @@ public class Results extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_results, container, false);
 
+        //Get java handles for XML objects
         TextView txtWinner = view.findViewById(R.id.txt_winner);
         TextView txtScore = view.findViewById(R.id.txt_score);
         Button btnSave = view.findViewById(R.id.btn_save);
         Button btnHome = view.findViewById(R.id.btn_home);
         Button btnReplay = view.findViewById(R.id.btn_replay);
 
+        //Get args from previous screen (tictactoe or hangman)
         String winner = ResultsArgs.fromBundle(requireArguments()).getName();
         String game = ResultsArgs.fromBundle(requireArguments()).getGame();
         int score = ResultsArgs.fromBundle(requireArguments()).getScore();
 
+        //Fill in text fields
         txtWinner.setText("Winner: " + winner);
         txtScore.setText("Score: " + score);
 
@@ -51,29 +54,32 @@ public class Results extends Fragment {
         }
         DBHelper dbHelper = new DBHelper(getContext());
 
+        //If save button clicked...
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //save score to database
+                //...save score to database
                 DBContract dbContract = new DBContract();
                 dbHelper.saveEntry(winner, game, score);
 
-                System.out.println(dbHelper.fetchAllEntries());
+                //System.out.println(dbHelper.fetchAllEntries());
 
+                //Blur out save button (can only save an entry once!)
                 btnSave.setText("Saved!");
                 btnSave.setEnabled(false);
             }
         });
 
+        //Go back home
         btnHome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_results_to_mainMenu);
             }
         });
 
-
+        //Go back to previous game played
         btnReplay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (game.equals("Tic Tac Toe") || game.equals("Reversed Tic Tac Toe"))
+                if (game.equals("TicTacToe") || game.equals("R. TicTacToe"))
                 {
                     Navigation.findNavController(view).navigate(R.id.action_results_to_ticTacToe);
                 }
