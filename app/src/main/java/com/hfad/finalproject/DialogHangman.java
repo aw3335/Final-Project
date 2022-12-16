@@ -17,13 +17,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link DialogHangman#} factory method to
- * create an instance of this fragment.
+ * DialogHangMan display a dialog to the user to gets a name of whos playing the game
  *
  */
 public class DialogHangman extends DialogFragment {
 
+    /**
+     * Constructor that doesn't allow the user to cancel out of the dialog
+     */
     public DialogHangman()
     {
         setCancelable(false);
@@ -32,14 +33,20 @@ public class DialogHangman extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
+        //Inflates the layout to look like the dialog
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_hangman, null);
 
+        //Creates an alertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        //Connects to the text and button so we can call them
         EditText edtPlayerOne = view.findViewById(R.id.edt_player_one);
         Button btnStart = view.findViewById(R.id.btn_start);
 
+        //When the start button is clicked we first check if the user has entered a name.
+        //If not then they cant proceed and a message is displayed else the dialog closes and the
+        //player name is taken
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +58,6 @@ public class DialogHangman extends DialogFragment {
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-
                 }
                 else {
                     HangMan.player = edtPlayerOne.getText().toString();
@@ -60,8 +66,10 @@ public class DialogHangman extends DialogFragment {
             }
         });
 
+        //Builds the view with the dialog
         builder.setView(view);
 
+        //Returns the created build
         return builder.create();
     }
 }
