@@ -2,6 +2,7 @@ package com.hfad.finalproject;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.DialogFragment;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,8 +43,20 @@ public class DialogHangman extends DialogFragment {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HangMan.player = edtPlayerOne.getText().toString();
-                dismiss();
+                if(edtPlayerOne.getText().toString().equals(""))
+                {
+                    Context context = v.getContext();
+                    CharSequence text = "Enter a Name!";
+                    int duration = Toast.LENGTH_LONG;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+
+                }
+                else {
+                    HangMan.player = edtPlayerOne.getText().toString();
+                    dismiss();
+                }
             }
         });
 
