@@ -134,6 +134,7 @@
     <ImageView
         android:id="@+id/imgHome"
         android:layout_width="50dp"
+        android:tooltipText="MainMenu"
         android:layout_height="50dp"
         android:src="@drawable/_11645_home_512x512"
         app:layout_constraintEnd_toStartOf="@+id/imgTicTacToe"
@@ -142,6 +143,7 @@
     <ImageView
         android:id="@+id/imgTicTacToe"
         android:layout_width="50dp"
+        android:tooltipText="Tic Tac Toe - (Reversed)"
         android:layout_height="50dp"
         android:src="@drawable/asset_1"
         app:layout_constraintEnd_toStartOf="@+id/imgScore"
@@ -151,6 +153,7 @@
         android:id="@+id/imgScore"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:tooltipText="ScoreBoard"
         android:src="@drawable/asset_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

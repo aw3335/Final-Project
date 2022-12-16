@@ -12,6 +12,7 @@
         android:id="@+id/imgHangman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:tooltipText="Hangman"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/hangman"
@@ -22,6 +23,7 @@
         android:id="@+id/imgHome"
         app:layout_constraintEnd_toStartOf="@+id/imgTicTacToe"
         app:layout_constraintTop_toTopOf="parent"
+        android:tooltipText="MainMenu"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/_11645_home_512x512"
@@ -31,6 +33,7 @@
     <ImageView
         android:id="@+id/imgTicTacToe"
         app:layout_constraintEnd_toStartOf="@+id/imgHangman"
+        android:tooltipText="Tic Tac Toe - (Reversed)"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="50dp"
         android:layout_height="50dp"

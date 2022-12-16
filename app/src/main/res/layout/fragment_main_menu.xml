@@ -24,6 +24,7 @@
     <ImageView
         android:id="@+id/imgHangman"
         android:layout_width="50dp"
+        android:tooltipText="Hangman"
         android:layout_height="50dp"
         android:src="@drawable/hangman"
         app:layout_constraintEnd_toStartOf="@+id/imgScore"
@@ -32,6 +33,7 @@
     <ImageView
         android:id="@+id/imgTicTacToe"
         android:layout_width="50dp"
+        android:tooltipText="Tic Tac Toe - (Reversed)"
         android:layout_height="50dp"
         android:src="@drawable/asset_1"
         app:layout_constraintEnd_toStartOf="@+id/imgHangman"
@@ -39,6 +41,7 @@
 
     <ImageView
         android:id="@+id/imgScore"
+        android:tooltipText="ScoreBoard"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/asset_2"
