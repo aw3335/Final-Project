@@ -3,7 +3,7 @@ package com.hfad.finalproject;
 import android.provider.BaseColumns;
 
 /**
- * Class DBContract that allows Sql Lite to work in Android Studios
+ * Class DBContract that allows tales to be created and deleted
  */
 public class DBContract {
 
